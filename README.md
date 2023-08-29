@@ -11,6 +11,7 @@ step 3: type it in browser...
 http://localhost:8080/h2-console
  -> connect to database
  -> run the command -- "SELECT * FROM USER_DETAILS ;" -- to check the entries in the table
+
 step 4: open postman..
 type...
  -> POST > http://localhost:8080
@@ -24,7 +25,8 @@ type...
 }
 
 Have some more records..
-step 4: type..
+
+step 5: type..
  -> GET> http://localhost:8081/1
  to see the record of id=1..
 step 5: stop running the userservice..
