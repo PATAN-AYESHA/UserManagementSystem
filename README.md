@@ -29,8 +29,10 @@ Have some more records..
 step 5: type..
  -> GET> http://localhost:8081/1
  to see the record of id=1..
-step 5: stop running the userservice..
-step 6: again in postman....type..
+
+step 6: stop running the userservice..
+
+step 7: again in postman....type..
  -> GET> http://localhost:8081
 
  And see the results..
