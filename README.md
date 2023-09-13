@@ -49,30 +49,30 @@ kafka-server-start.bat  ../../config/server.properties
 kafka-server-stop.bat  ../../config/server.properties
 
 5. Create a topic with 2 partitions: 
-kafka-topics.bat --bootstrap-server localhost:9092 --create --topic usermanagement-topic --partitions 2
+- kafka-topics.bat --bootstrap-server localhost:9092 --create --topic usermanagement-topic --partitions 2
 
 Describe a topic: 
-kafka-topics --bootstrap-server localhost:9092 --describe --topic usermanagement-topic
+- kafka-topics --bootstrap-server localhost:9092 --describe --topic usermanagement-topic
 
 4. Kafka console producer: 
 kafka-console-producer.bat --bootstrap-server localhost:9092 --topic  usermanagement-topic
 
-5. Kafka console consumer: 
-kafka-console-consumer.bat --bootstrap-server localhost:9092  --topic usermanagement-topic --from-beginning
+5. Kafka console consumer:  
+- kafka-console-consumer.bat --bootstrap-server localhost:9092  --topic usermanagement-topic --from-beginning
 
 6. To get a detailed description about the log file, use a tool kafka-run-class: 
-kafka-run-class.bat kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files C:/logs/kafka-logs/usermanagement-topic-0/00000000000000000000.log
+- kafka-run-class.bat kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files C:/logs/kafka-logs/usermanagement-topic-0/00000000000000000000.log
 
 7.To get End offset details for each partition: 
-kafka-run-class.bat kafka.tools.GetOffsetShell --bootstrap-server localhost:9092 --topic usermanagement-topic
+- kafka-run-class.bat kafka.tools.GetOffsetShell --bootstrap-server localhost:9092 --topic usermanagement-topic
 
 8. Check offset for given timestamp: 
-kafka-run-class.bat kafka.tools.GetOffsetShell --bootstrap-server localhost:9092 --topic usermanagement-topic --time 1572780669989
+- kafka-run-class.bat kafka.tools.GetOffsetShell --bootstrap-server localhost:9092 --topic usermanagement-topic --time 1572780669989
 
 9. Retrieve one message at a time from specific offset and partition:
-kafka-console-consumer.bat --bootstrap-server localhost:9092 --max-messages 1  --partition 0  --offset 3 --topic usermanagement-topic
+- kafka-console-consumer.bat --bootstrap-server localhost:9092 --max-messages 1  --partition 0  --offset 3 --topic usermanagement-topic
 
 
-10. kafka send they records with key and value
-kafka-console-producer.bat --bootstrap-server localhost:9092 --topic test --property "parse.key=true" --property "key.separator=:"
-kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --property print.key=true --property key.separator=":" --from-beginning
+10. kafka send they records with key and value: - 
+- kafka-console-producer.bat --bootstrap-server localhost:9092 --topic test --property "parse.key=true" --property "key.separator=:"
+- kafka-console-consumer.bat --bootstrap-server localhost:9092 --topic test --property print.key=true --property key.separator=":" --from-beginning
