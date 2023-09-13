@@ -48,25 +48,25 @@ kafka-server-start.bat  ../../config/server.properties
 - To Stop: 
 kafka-server-stop.bat  ../../config/server.properties
 
-5. Create a topic with 2 partitions
+5. Create a topic with 2 partitions: 
 kafka-topics.bat --bootstrap-server localhost:9092 --create --topic usermanagement-topic --partitions 2
 
-Describe a topic
+Describe a topic: 
 kafka-topics --bootstrap-server localhost:9092 --describe --topic usermanagement-topic
 
-4. Kafka console producer
+4. Kafka console producer: 
 kafka-console-producer.bat --bootstrap-server localhost:9092 --topic  usermanagement-topic
 
-5. Kafka console consumer
+5. Kafka console consumer: 
 kafka-console-consumer.bat --bootstrap-server localhost:9092  --topic usermanagement-topic --from-beginning
 
-6. To get a detailed description about the log file, use a tool kafka-run-class
+6. To get a detailed description about the log file, use a tool kafka-run-class: 
 kafka-run-class.bat kafka.tools.DumpLogSegments --deep-iteration --print-data-log --files C:/logs/kafka-logs/usermanagement-topic-0/00000000000000000000.log
 
-7.To get End offset details for each partition
+7.To get End offset details for each partition: 
 kafka-run-class.bat kafka.tools.GetOffsetShell --bootstrap-server localhost:9092 --topic usermanagement-topic
 
-8. Check offset for given timestamp
+8. Check offset for given timestamp: 
 kafka-run-class.bat kafka.tools.GetOffsetShell --bootstrap-server localhost:9092 --topic usermanagement-topic --time 1572780669989
 
 9. Retrieve one message at a time from specific offset and partition:
