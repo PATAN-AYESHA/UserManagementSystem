@@ -40,13 +40,15 @@ step 7: again in postman....type..
 
  1. To start zookeeper:
 zookeeper-server-start.bat  ../../config/zookeeper.properties
+- To Stop: 
 zookeeper-server-stop.bat  ../../config/zookeeper.properties
 
-2. To start Kafka
+3. To start Kafka
 kafka-server-start.bat  ../../config/server.properties
+- To Stop: 
 kafka-server-stop.bat  ../../config/server.properties
 
-3. Create a topic with 2 partitions
+5. Create a topic with 2 partitions
 kafka-topics.bat --bootstrap-server localhost:9092 --create --topic usermanagement-topic --partitions 2
 
 Describe a topic
